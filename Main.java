@@ -10,7 +10,11 @@ public class Main {
 
     public static int typeTax2(int add, int out) {
         int tax = ((add - out) * 15) / 100;
-        return tax;
+        if (tax >= 0) {
+            return tax;
+        } else {
+            return 0;
+        }
     }
 
     public static void main(String[] args) {
@@ -48,10 +52,10 @@ public class Main {
                     case 3:
                         int tax1 = typeTax1(earnings);
                         int tax2 = typeTax2(earnings, spendings);
-                        if (tax1 < 0 || tax2 < 0) {
-                            System.out.println("Налог не может быть отрицательным!");
-                            break;
-                        }
+//                        if (tax1 < 0 || tax2 < 0) {
+//                            System.out.println("Налог не может быть отрицательным!");
+//                            break;
+//                        }
                         if (tax2 > tax1) {
                             System.out.println("Мы советуем вам УСН доходы" + "\n" +
                                     "Ваш налог составит: " + tax1 + " рублей" + "\n" +
